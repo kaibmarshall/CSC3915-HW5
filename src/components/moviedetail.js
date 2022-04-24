@@ -24,22 +24,22 @@ class MovieDetail extends Component {
                 <Card>
                     <Card.Header>Movie Detail</Card.Header>
                     <Card.Body>
-                        <Image className="image" src={this.props.selectedMovie.imageUrl} thumbnail />
+                        <Image className="image" src={this.props.selectedMovie.movie.imageUrl} thumbnail />
                     </Card.Body>
                     <ListGroup>
-                        <ListGroupItem>{this.props.selectedMovie.title}</ListGroupItem>
+                        <ListGroupItem>{this.props.selectedMovie.movie.title}</ListGroupItem>
                         <ListGroupItem>
-                            {this.props.selectedMovie.actors.map((actor, i) =>
+                            {this.props.selectedMovie.movie.actors.map((actor, i) =>
                                 <p key={i}>
                                     <b>{actor.actorName}</b> {actor.characterName}
                                 </p>)}
                         </ListGroupItem>
-                        <ListGroupItem><h4><BsStarFill/> {this.props.selectedMovie.avgRating}</h4></ListGroupItem>
+                        <ListGroupItem><h4><BsStarFill/> {this.props.selectedMovie.movie.avgRating}</h4></ListGroupItem>
                     </ListGroup>
                     <Card.Body>
                         {this.props.selectedMovie.reviews.map((review, i) =>
                             <p key={i}>
-                                <b>{review.username}</b>&nbsp; {review.review}
+                                <b>{review.reviewerUsername}</b>&nbsp; {review.comment}
                                 &nbsp;  <BsStarFill /> {review.rating}
                             </p>
                         )}
